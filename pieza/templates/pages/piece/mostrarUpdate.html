@@ -1,0 +1,32 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for pieza in piezas %}
+    <div class="col">
+    <div class="card">
+    <div class="card-body">
+
+    <h5 class="card-title fw-bold">Nombre: {{pieza.nombre }}</h5>
+    <p class="card-text">Identificacion: {{ pieza.id_pieza }}</p>
+    <p class="card-text">Valor facial: {{ pieza.valor_facial }}</p>
+    <p class="card-text">Precio avaluado: {{ pieza.precio_avaluado }}</p>
+    <p class="card-text">Lugar de ceca: {{ pieza.ceca }}</p>
+    <p class="card-text">Material: {{ pieza.material }}</p>
+    <p class="card-text">Peso: {{ pieza.peso}}</p>
+    <p class="card-text">Diametro: {{ pieza.diametro }}</p>
+    <p class="card-text">Año de la pieza: {{ pieza.año }}</p>
+    <p class="card-text">Tipo del artículo: {{ pieza.tipo_articulo }}</p>
+
+             
+    <a name="editar" id="editar" class="btn btn-danger" href="{%url 'editar' %}" role="button">Editar pieza</a>
+    <a name="eliminar" id="eliminar" class="btn btn-danger" href="{%url 'eliminar'%}" role="button">Eliminar pieza</a>
+    </div>
+    </div>
+    </div>
+        {% endfor %}
+
+    
+    </div>
+{% endblock content %}

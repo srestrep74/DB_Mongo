@@ -1,0 +1,11 @@
+{% if error_message %}
+
+    <script>
+        function mostrar_error()
+        {
+            alert('{{error_message}}')
+        }
+        window.onload = mostrar_error;
+    </script>
+
+    {% endif %}
